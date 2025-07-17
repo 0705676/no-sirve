@@ -1,60 +1,68 @@
 body {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 20px;
-  background: #f8f9fa;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f8f8f8;
 }
 
 h1 {
+  text-align: center;
   margin-bottom: 20px;
 }
 
 #malla-container {
   display: grid;
-  grid-template-columns: repeat(6, 160px);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .materia {
   padding: 10px;
+  border: 2px solid #ccc;
   border-radius: 8px;
   background-color: white;
-  border: 2px solid #ccc;
+  text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: bold;
+  transition: all 0.2s;
 }
 
-.materia.bloqueada {
+.materia:hover {
+  transform: scale(1.02);
+}
+
+.bloqueada {
   background-color: #ccc;
   cursor: not-allowed;
-  color: #666;
 }
 
-.materia.aprobada {
-  background-color: #d9534f;
+.aprobada {
+  background-color: #e74c3c;
   color: white;
-  border-color: #b52b27;
 }
 
-button#reiniciar {
+#botones {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#reiniciar {
+  background-color: #2c3e50;
+  color: white;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0275d8;
-  color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-button#reiniciar:hover {
-  background-color: #025aa5;
+#reiniciar:hover {
+  background-color: #1a242f;
 }
 
 footer {
   margin-top: 30px;
-  color: #888;
-  font-size: 14px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
 }
