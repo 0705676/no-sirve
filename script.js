@@ -1,67 +1,67 @@
 const materias = [
-// I semestre
-{ nombre: "Matemáticas", codigo: "MAT", prerequisitos: [] },
-{ nombre: "Bases Sociológicas para el Trabajo Social", codigo: "SOC", prerequisitos: [] },
-{ nombre: "Fundamentos del trabajo social", codigo: "FUN", prerequisitos: [] },
-{ nombre: "Expresión Oral y escrita", codigo: "EXP", prerequisitos: [] },
-{ nombre: "Autodesarrollo", codigo: "AUT", prerequisitos: [] },
+  // I semestre
+  { nombre: "Matemáticas", abre: ["Estadística I"] },
+  { nombre: "Bases Sociológicas para el Trabajo Social", abre: ["Antropología Social"] },
+  { nombre: "Fundamentos del trabajo social", abre: ["Trabajo Social como disciplina y profesión"] },
+  { nombre: "Expresión Oral y escrita" },
+  { nombre: "Autodesarrollo" },
 
-// II semestre
-{ nombre: "Estadística I", codigo: "EST1", prerequisitos: ["MAT"] },
-{ nombre: "Epistemología de las ciencias sociales", codigo: "EPI", prerequisitos: [] },
-{ nombre: "Trabajo social como disciplina y profesión", codigo: "TSD", prerequisitos: ["FUN"] },
-{ nombre: "Antropología Social", codigo: "ANT", prerequisitos: ["SOC"] },
-{ nombre: "Psicología General", codigo: "PSIG", prerequisitos: [] },
-{ nombre: "Informática Básica", codigo: "INF", prerequisitos: [] },
+  // II semestre
+  { nombre: "Estadística I", abre: ["Estadística II", "Estudios de Población"] },
+  { nombre: "Epistemología de las ciencias sociales", abre: ["Investigación Social I"] },
+  { nombre: "Trabajo Social como disciplina y profesión", abre: ["Métodos de Intervención Profesional en el Trabajo Social"] },
+  { nombre: "Antropología Social" },
+  { nombre: "Psicología General", abre: ["Psicología Social"] },
+  { nombre: "Informática Básica" },
 
-// III semestre
-{ nombre: "Estadística II", codigo: "EST2", prerequisitos: ["EST1"] },
-{ nombre: "Investigación Social I", codigo: "INV1", prerequisitos: ["EPI"] },
-{ nombre: "Métodos de Intervención Profesional en el Trabajo Social", codigo: "METINT", prerequisitos: ["TSD"] },
-{ nombre: "Ecología Humana", codigo: "ECOH", prerequisitos: [] },
-{ nombre: "Psicología Social", codigo: "PSS", prerequisitos: ["PSIG"] },
-{ nombre: "Teoría Socio-política", codigo: "TSOC", prerequisitos: [] },
+  // III semestre
+  { nombre: "Estadística II", abre: ["Investigación Social II"] },
+  { nombre: "Investigación Social I", abre: ["Investigación Social II"] },
+  { nombre: "Métodos de Intervención Profesional en el Trabajo Social", abre: ["Trabajo Social con Grupo", "Planificación Social"] },
+  { nombre: "Ecología Humana" },
+  { nombre: "Psicología Social" },
+  { nombre: "Teoría Socio-política" },
 
-// IV semestre
-{ nombre: "Comunicación", codigo: "COM", prerequisitos: [] },
-{ nombre: "Estudios de Población", codigo: "POP", prerequisitos: ["EST1"] },
-{ nombre: "Trabajo Social con Grupo", codigo: "TSG", prerequisitos: ["METINT"] },
-{ nombre: "Técnicas Grupales", codigo: "TG", prerequisitos: [] },
-{ nombre: "Economía Política", codigo: "ECO", prerequisitos: [] },
-{ nombre: "Historia Contemporánea de Venezuela", codigo: "HCV", prerequisitos: [] },
+  // IV semestre
+  { nombre: "Comunicación" },
+  { nombre: "Estudios de Población", abre: ["Indicadores Sociales"] },
+  { nombre: "Trabajo Social con Grupo", abre: ["Trabajo Social en el ámbito comunitario"] },
+  { nombre: "Técnicas Grupales" },
+  { nombre: "Economía Política", abre: ["Estado y Política Social"] },
+  { nombre: "Historia Contemporánea de Venezuela" },
 
-// V semestre
-{ nombre: "Investigación Social II", codigo: "INV2", prerequisitos: ["INV1", "EST2"] },
-{ nombre: "Legislación Social", codigo: "LEG", prerequisitos: [] },
-{ nombre: "Trabajo Social en el ámbito comunitario", codigo: "TSCOM", prerequisitos: ["TSG"] },
-{ nombre: "Planificación Social", codigo: "PLS", prerequisitos: ["METINT"] },
-{ nombre: "Estado y Política Social", codigo: "EPS", prerequisitos: ["ECO"] },
-{ nombre: "Inglés", codigo: "ING", prerequisitos: [] },
+  // V semestre
+  { nombre: "Investigación Social II", abre: ["Investigación Social III"] },
+  { nombre: "Legislación Social" },
+  { nombre: "Trabajo Social en el ámbito comunitario", abre: ["Prácticas de Trabajo Social I"] },
+  { nombre: "Planificación Social", abre: ["Formulación y Evaluación de Proyectos Sociales", "Indicadores Sociales"] },
+  { nombre: "Estado y Política Social", abre: ["Administración y Gerencia Social", "Seguridad Social"] },
+  { nombre: "Inglés" },
 
-// VI semestre
-{ nombre: "Investigación Social III", codigo: "INV3", prerequisitos: ["INV2"] },
-{ nombre: "Administración y Gerencia Social", codigo: "AGS", prerequisitos: ["EPS"] },
-{ nombre: "Trabajo Social con Individuo y Familia", codigo: "TSF", prerequisitos: [] },
-{ nombre: "Formulación y Evaluación de Proyectos Sociales", codigo: "FEP", prerequisitos: ["PLS"] },
-{ nombre: "Indicadores Sociales", codigo: "IND", prerequisitos: ["POP", "PLS"] },
-{ nombre: "Electiva I", codigo: "ELEC1", prerequisitos: [] },
+  // VI semestre
+  { nombre: "Investigación Social III", abre: ["Computación Aplicada a las Ciencias Sociales"] },
+  { nombre: "Administración y Gerencia Social", abre: ["Prácticas de Trabajo Social I"] },
+  { nombre: "Trabajo Social con Individuo y Familia", abre: ["Orientación Familiar"] },
+  { nombre: "Formulación y Evaluación de Proyectos Sociales" },
+  { nombre: "Indicadores Sociales" },
+  { nombre: "Electiva I" },
 
-// VII semestre
-{ nombre: "Prácticas de Trabajo Social I", codigo: "PRA1", prerequisitos: ["TSCOM", "AGS"] },
-{ nombre: "Seguridad Social", codigo: "SEG", prerequisitos: ["EPS"] },
-{ nombre: "Electiva II", codigo: "ELEC2", prerequisitos: [] },
+  // VII semestre
+  { nombre: "Prácticas de Trabajo Social I", abre: ["Prácticas de Trabajo Social II"] },
+  { nombre: "Seguridad Social" },
+  { nombre: "Electiva II" },
 
-// VIII semestre
-{ nombre: "Computación Aplicada a las Ciencias Sociales", codigo: "COMP", prerequisitos: ["INV3"] },
-{ nombre: "Prácticas de Trabajo Social II", codigo: "PRA2", prerequisitos: ["PRA1"] },
-{ nombre: "Orientación Familiar", codigo: "ORI", prerequisitos: ["TSF"] },
+  // VIII semestre
+  { nombre: "Computación Aplicada a las Ciencias Sociales" },
+  { nombre: "Prácticas de Trabajo Social II", abre: ["Prácticas de Trabajo Social III"] },
+  { nombre: "Orientación Familiar", abre: ["Prácticas de Trabajo Social III"] },
 
-// IX semestre
-{ nombre: "Prácticas de Trabajo Social III", codigo: "PRA3", prerequisitos: ["PRA2", "ORI"] },
+  // IX semestre
+  { nombre: "Prácticas de Trabajo Social III" },
 
-// X semestre
-{ nombre: "Trabajo de Grado", codigo: "TG", prerequisitos: [] },
-{ nombre: "Seminario Servicio Comunitario", codigo: "SSC", prerequisitos: [] }
+  // X semestre
+  { nombre: "Trabajo de Grado" },
+  { nombre: "Seminario Servicio Comunitario" }
 ];
 
 const container = document.getElementById("malla-container");
