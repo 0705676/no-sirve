@@ -64,9 +64,3 @@ const materias = [
   { nombre: "Seminario Servicio Comunitario" }
 ];
 
-document.getElementById("reiniciar").addEventListener("click", () => {
-  localStorage.removeItem("aprobadas");
-  actualizarMalla();
-});
-
-actualizarMalla();
