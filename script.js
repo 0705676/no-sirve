@@ -64,54 +64,6 @@ const materias = [
   { nombre: "Seminario Servicio Comunitario" }
 ];
 
-const container = document.getElementById("malla-container");
-
-function estaAprobada(codigo) {
-  const aprobadas = JSON.parse(localStorage.getItem("aprobadas") || "[]");
-  return aprobadas.includes(codigo);
-}
-
-function guardarAprobadas(aprobadas) {
-  localStorage.setItem("aprobadas", JSON.stringify(aprobadas));
-}
-
-function obtenerAprobadas() {
-  return JSON.parse(localStorage.getItem("aprobadas") || "[]");
-}
-
-function actualizarMalla() {
-  container.innerHTML = "";
-  const aprobadas = obtenerAprobadas();
-
-  materias.forEach(m => {
-    const div = document.createElement("div");
-    div.classList.add("materia");
-    div.textContent = m.nombre;
-
-    const bloqueada = m.prerequisitos.some(pr => !aprobadas.includes(pr));
-    if (bloqueada && !aprobadas.includes(m.codigo)) {
-      div.classList.add("bloqueada");
-    } else if (aprobadas.includes(m.codigo)) {
-      div.classList.add("aprobada");
-    }
-
-    div.addEventListener("click", () => {
-      if (div.classList.contains("bloqueada")) return;
-
-      const index = aprobadas.indexOf(m.codigo);
-      if (index >= 0) {
-        aprobadas.splice(index, 1);
-      } else {
-        aprobadas.push(m.codigo);
-      }
-      guardarAprobadas(aprobadas);
-      actualizarMalla();
-    });
-
-    container.appendChild(div);
-  });
-}
-
 document.getElementById("reiniciar").addEventListener("click", () => {
   localStorage.removeItem("aprobadas");
   actualizarMalla();
